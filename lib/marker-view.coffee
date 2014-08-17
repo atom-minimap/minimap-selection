@@ -18,8 +18,6 @@ class MarkerView
   updateDisplay: =>
     return unless @isUpdateNeeded()
 
-    console.log 'update display'
-
     @updateNeeded = false
     @clearRegions()
     range = @getScreenRange()
