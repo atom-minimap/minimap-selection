@@ -1,5 +1,4 @@
 {View} = require 'atom'
-MarkerView = require './marker-view'
 module.exports =
 class MinimapSelectionView extends View
   decorations: []
