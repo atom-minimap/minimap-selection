@@ -2,12 +2,15 @@
 MarkerView = require './marker-view'
 module.exports =
 class MinimapSelectionView extends View
-  markers: []
+  decorations: []
   @content: ->
     @div class: 'minimap-selection'
 
   initialize: (@minimapView) ->
     @subscribe @minimapView.editorView, "selection:changed", @handleSelection
+    @subscribe @minimapView.editorView, "cursor-added", @handleSelection
+    @subscribe @minimapView.editorView, "cursor-moved", @handleSelection
+    @subscribe @minimapView.editorView, "cursor-removed", @handleSelection
 
   attach: ->
     @minimapView.miniUnderlayer.append(this)
@@ -19,20 +22,16 @@ class MinimapSelectionView extends View
     @minimapView = null
 
   handleSelection: =>
-    @removeMarkers()
+    @removeDecorations()
 
     {editor} = @minimapView
 
     return if editor.getSelection().isEmpty()
 
     for selection in editor.getSelections()
-      marker = new MarkerView(editorView: @minimapView, marker: selection.marker)
-      @markers.push marker
-      @append marker.element
+      @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.editor .selection .region')
 
-  removeMarkers: ->
-    return unless @markers?
-    return if @markers.length is 0
-    marker.element.remove() for marker in @markers
-    marker = null
-    @markers = []
+  removeDecorations: ->
+    return if @decorations.length is 0
+    decoration.destroy() for decoration in @decorations
+    @decorations = []
