@@ -10,6 +10,8 @@ module.exports =
     return @deactivate() unless minimapPackage?
 
     @minimap = require minimapPackage.path
+    return @deactivate() unless @minimap.versionMatch('3.x')
+
     @minimap.registerPlugin 'selection', this
 
   deactivate: ->
