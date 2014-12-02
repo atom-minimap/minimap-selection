@@ -1,4 +1,6 @@
-{View} = require 'atom'
+{View} = require 'atom-space-pen-views'
+{CompositeDisposable} = require 'event-kit'
+
 module.exports =
 class MinimapSelectionView extends View
   decorations: []
@@ -6,10 +8,11 @@ class MinimapSelectionView extends View
     @div class: 'minimap-selection'
 
   initialize: (@minimapView) ->
-    @subscribe @minimapView.editorView, "selection:changed", @handleSelection
-    @subscribe @minimapView.editorView, "cursor-added", @handleSelection
-    @subscribe @minimapView.editorView, "cursor-moved", @handleSelection
-    @subscribe @minimapView.editorView, "cursor-removed", @handleSelection
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add @minimapView.editor.onDidChangeSelectionRange @handleSelection
+    @subscriptions.add @minimapView.editor.onDidAddCursor @handleSelection
+    @subscriptions.add @minimapView.editor.onDidChangeCursorPosition @handleSelection
+    @subscriptions.add @minimapView.editor.onDidRemoveCursor @handleSelection
 
   attach: ->
     @minimapView.miniUnderlayer.append(this)
@@ -17,7 +20,7 @@ class MinimapSelectionView extends View
 
   destroy: ->
     @detach()
-    @unsubscribe()
+    @subscriptions.dispose()
     @minimapView = null
 
   handleSelection: =>
@@ -28,7 +31,7 @@ class MinimapSelectionView extends View
     return if editor.getSelections().length is 1 and editor.getLastSelection().isEmpty()
 
     for selection in editor.getSelections()
-      @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .editor .selection .region')
+      @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
 
   removeDecorations: ->
     return if @decorations.length is 0

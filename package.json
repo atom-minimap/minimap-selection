@@ -9,6 +9,8 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "emissary": "1.x"
+    "emissary": "1.x",
+    "event-kit": "^0",
+    "atom-space-pen-views": "^0"
   }
 }
