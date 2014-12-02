@@ -28,10 +28,9 @@ class MinimapSelectionView extends View
 
     {editor} = @minimapView
 
-    return if editor.getSelections().length is 1 and editor.getLastSelection().isEmpty()
-
     for selection in editor.getSelections()
-      @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
+      unless selection.isEmpty()
+        @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
 
   removeDecorations: ->
     return if @decorations.length is 0
