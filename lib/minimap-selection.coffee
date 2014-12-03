@@ -24,7 +24,7 @@ module.exports =
     return if @active
     @active = true
 
-    @subscription = @minimap.eachMinimapView ({view}) =>
+    @subscription = @minimap.observeMinimaps ({view}) =>
       selectionView = new MinimapSelectionView(view)
       selectionView.attach()
 
