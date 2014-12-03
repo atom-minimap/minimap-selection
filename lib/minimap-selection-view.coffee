@@ -30,9 +30,10 @@ class MinimapSelectionView extends View
 
     for selection in editor.getSelections()
       unless selection.isEmpty()
-        @decorations.push @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
+        decoration = @minimapView.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
+        @decorations.push decoration if decoration?
 
   removeDecorations: ->
     return if @decorations.length is 0
-    decoration.destroy() for decoration in @decorations
+    decoration?.destroy() for decoration in @decorations
     @decorations = []
