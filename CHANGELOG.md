@@ -1,3 +1,13 @@
+<a name="3.0.1"></a>
+# 3.0.1 (2014-12-05)
+
+## :bug: Bug Fixes
+
+- Fix use of deprecated minimap API ([f477b519](https://github.com/abe33/atom-minimap-selection/commit/f477b519870afbeea18624024ef9cf91c448dc96))
+- Fix removal of inexistant decoration ([58559b81](https://github.com/abe33/atom-minimap-selection/commit/58559b818c05b4c0998f8223f3a251feea5c7393))
+- Fix error raised when expanding the number of cursors ([c3d7b679](https://github.com/abe33/atom-minimap-selection/commit/c3d7b6797132dbf0219eadff2f5382b11e9dfceb))
+- Fix broken plugin with latest minimap changes ([413f3a30](https://github.com/abe33/atom-minimap-selection/commit/413f3a306ac732be4998c400432ae0cea45e8bbe))
+
 <a name="v3.0.0"></a>
 # v3.0.0 (2014-09-19)
 
