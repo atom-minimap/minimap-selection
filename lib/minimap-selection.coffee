@@ -8,8 +8,8 @@ module.exports =
   activate: (state) ->
     try
       atom.packages.activatePackage('minimap').then (minimapPackage) =>
-        @minimap = require minimapPackage.path
-        return @deactivate() unless @minimap.versionMatch('3.x')
+        @minimap = minimapPackage.mainModule
+        return @deactivate() unless @minimap.versionMatch('>= 3.0.0')
 
         @minimap.registerPlugin 'selection', this
     catch
@@ -20,19 +20,20 @@ module.exports =
     @minimap = null
 
   isActive: -> @active
+
   activatePlugin: ->
     return if @active
     @active = true
 
-    @subscription = @minimap.observeMinimaps ({view}) =>
-      selectionView = new MinimapSelectionView(view)
-      selectionView.attach()
+    @subscription = @minimap.observeMinimaps (o) =>
+      minimap = o.view ? o
+      selectionView = new MinimapSelectionView(minimap)
 
-      @views[view.editor.id] = selectionView
+      @views[minimap.getTextEditor().id] = selectionView
 
   deactivatePlugin: ->
-    view.destroy() for id,view of @views
     return unless @active
+    view.destroy() for id,view of @views
     @active = false
     @views = {}
 
