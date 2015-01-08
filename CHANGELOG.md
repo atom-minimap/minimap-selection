@@ -1,3 +1,10 @@
+<a name="v3.1.1"></a>
+# v3.1.1 (2015-01-08)
+
+## :bug: Bug Fixes
+
+- Remove call to deprecated method ([3601f069](https://github.com/abe33/atom-minimap-selection/commit/3601f069b22a4cc80a2ea6aa1fe42e32c0fbf4bc))
+
 <a name="v3.1.0"></a>
 # v3.1.0 (2015-01-05)
 
