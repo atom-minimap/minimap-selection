@@ -37,4 +37,4 @@ module.exports =
     @active = false
     @views = {}
 
-    @subscription.off()
+    @subscription.dispose()
