@@ -1,3 +1,14 @@
+<a name="v4.0.0"></a>
+# v4.0.0 (2015-02-10)
+
+## :sparkles: Features
+
+- Add TravisCI setup ([3b9b6799](https://github.com/abe33/atom-minimap-selection/commit/3b9b679993c7541e05f06e642a197a8b68a9d493))
+
+## :bug: Bug Fixes
+
+- Fix errors raised when destroying the minimap ([c65692b5](https://github.com/abe33/atom-minimap-selection/commit/c65692b52e48b44585dd15575dbefd0e1420a6fb), [#4](https://github.com/abe33/atom-minimap-selection/issues/4))
+
 <a name="v3.1.1"></a>
 # v3.1.1 (2015-01-08)
 
