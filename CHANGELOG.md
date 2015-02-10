@@ -1,3 +1,11 @@
+<a name="v4.0.1"></a>
+# v4.0.1 (2015-02-10)
+
+## :arrow_up: Dependencies Update
+
+- Update atom-space-pen-views to version 2.x ([d4aabbf4](https://github.com/abe33/atom-minimap-selection/commit/d4aabbf4819d3e3c4d7f98987a5dc9c13b229931))
+- Update event-kit to version 1.x ([5087e006](https://github.com/abe33/atom-minimap-selection/commit/5087e006d6641b4481638a2c390f58c7cfac7efc))
+
 <a name="v4.0.0"></a>
 # v4.0.0 (2015-02-10)
 
