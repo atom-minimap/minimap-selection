@@ -29,7 +29,12 @@ module.exports =
       minimap = o.view ? o
       selectionView = new MinimapSelectionView(minimap)
 
-      @views[minimap.getTextEditor().id] = selectionView
+      @views[minimap.id] = selectionView
+
+      disposable = minimap.onDidDestroy =>
+        selectionView.destroy()
+        delete @views[minimap.id]
+        disposable.dispose()
 
   deactivatePlugin: ->
     return unless @active

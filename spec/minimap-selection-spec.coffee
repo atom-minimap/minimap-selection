@@ -1,4 +1,3 @@
-{WorkspaceView} = require 'atom'
 MinimapSelection = require '../lib/minimap-selection'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
@@ -7,12 +6,34 @@ MinimapSelection = require '../lib/minimap-selection'
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe "MinimapSelection", ->
-  activationPromise = null
+  [workspaceElement, editor, minimap, minimapModule] = []
 
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
-    activationPromise = atom.packages.activatePackage('minimap-selection')
+    workspaceElement = atom.views.getView(atom.workspace)
 
-  describe "when the minimap-selection:toggle event is triggered", ->
-    it "attaches and then detaches the view", ->
-      waitsForPromise -> activationPromise
+    waitsForPromise -> atom.workspace.open('sample.coffee')
+    waitsForPromise -> atom.packages.activatePackage('minimap').then (pkg) ->
+      minimapModule = pkg.mainModule
+
+    waitsForPromise -> atom.packages.activatePackage('minimap-selection')
+
+    runs ->
+      editor = atom.workspace.getActiveTextEditor()
+      minimap = minimapModule.minimapForEditor(editor)
+
+      spyOn(minimap, 'decorateMarker').andCallThrough()
+      spyOn(minimap, 'removeDecoration').andCallThrough()
+
+  describe 'when a selection is made in the text editor', ->
+    beforeEach ->
+      editor.setSelectedBufferRange([[1,0], [2,10]])
+
+    it 'adds a decoration for the selection in the minimap', ->
+      expect(minimap.decorateMarker).toHaveBeenCalled()
+
+    describe 'and then removed', ->
+      beforeEach ->
+        editor.setSelectedBufferRange([[0,0], [0,0]])
+
+      it 'removes the previously added decoration', ->
+        expect(minimap.removeDecoration).toHaveBeenCalled()
