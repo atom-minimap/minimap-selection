@@ -9,7 +9,7 @@ module.exports =
     try
       atom.packages.activatePackage('minimap').then (minimapPackage) =>
         @minimap = minimapPackage.mainModule
-        return @deactivate() unless @minimap.versionMatch('>= 3.5.0')
+        return @deactivate() unless @minimap.versionMatch('4.x')
 
         @minimap.registerPlugin 'selection', this
     catch
