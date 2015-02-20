@@ -3,14 +3,12 @@
   "main": "./lib/minimap-selection",
   "version": "4.0.1",
   "description": "Display the buffer's selections on the minimap",
-  "repository": "https://github.com/abe33/atom-minimap-selection",
+  "repository": "https://github.com/atom-minimap/minimap-selection",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.175.0"
   },
   "dependencies": {
-    "emissary": "1.x",
-    "event-kit": "1.x",
-    "atom-space-pen-views": "2.x"
+    "event-kit": "1.x"
   }
 }
