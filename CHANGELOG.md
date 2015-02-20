@@ -1,3 +1,10 @@
+<a name="v4.1.0"></a>
+# v4.1.0 (2015-02-20)
+
+## :truck: Repository Migration
+
+- Migrate package repository to atom-minimap organization ([f7b01e01](https://github.com/atom-minimap/minimap-selection/commit/f7b01e0119d2fcc8b1da8951d4c7142eb31379f6))
+
 <a name="v4.0.1"></a>
 # v4.0.1 (2015-02-10)
 
