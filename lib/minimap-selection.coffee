@@ -5,15 +5,10 @@ module.exports =
   active: false
   views: {}
 
-  activate: (state) ->
-    try
-      atom.packages.activatePackage('minimap').then (minimapPackage) =>
-        @minimap = minimapPackage.mainModule
-        return @deactivate() unless @minimap.versionMatch('4.x')
+  activate: ->
 
-        @minimap.registerPlugin 'selection', this
-    catch
-      @deactivate
+  consumeMinimapServiceV1: (@minimap) ->
+    @minimap.registerPlugin 'selection', this
 
   deactivate: ->
     @minimap.unregisterPlugin 'selection'
