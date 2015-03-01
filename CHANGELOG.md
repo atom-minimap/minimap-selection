@@ -1,3 +1,11 @@
+<a name="v4.2.0"></a>
+# v4.2.0 (2015-03-01)
+
+## :sparkles: Features
+
+- Implement minimap service consumer for plugin registration ([84a2d37f](https://github.com/atom-minimap/minimap-selection/commit/84a2d37fef5edeabf88867bc90004fc348d6afa3))
+
+
 <a name="v4.1.0"></a>
 # v4.1.0 (2015-02-20)
 
