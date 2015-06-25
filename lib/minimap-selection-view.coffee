@@ -9,7 +9,6 @@ class MinimapSelectionView
 
     @subscriptions = new CompositeDisposable
 
-    @subscriptions.add editor.onDidChangeSelectionRange @handleSelection
     @subscriptions.add editor.onDidAddCursor @handleSelection
     @subscriptions.add editor.onDidChangeCursorPosition @handleSelection
     @subscriptions.add editor.onDidRemoveCursor @handleSelection
