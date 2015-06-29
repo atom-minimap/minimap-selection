@@ -1,10 +1,20 @@
+<a name="v4.3.0"></a>
+# v4.3.0 (2015-06-29)
+
+## :sparkles: Features
+
+- Implement highlighting lines with cursors ([bbab9ca0](https://github.com/atom-minimap/minimap-selection/commit/bbab9ca036757efbdf018349666022ba7241c1d4), [#5](https://github.com/atom-minimap/minimap-selection/issues/5))
+
+## :racehorse: Performances
+
+- Doesn't recreate decorations when selection ranges changes ([b9df94f8](https://github.com/atom-minimap/minimap-selection/commit/b9df94f8716de1c9133f8c80160d807629941a1d))
+
 <a name="v4.2.0"></a>
 # v4.2.0 (2015-03-01)
 
 ## :sparkles: Features
 
 - Implement minimap service consumer for plugin registration ([84a2d37f](https://github.com/atom-minimap/minimap-selection/commit/84a2d37fef5edeabf88867bc90004fc348d6afa3))
-
 
 <a name="v4.1.0"></a>
 # v4.1.0 (2015-02-20)
