@@ -24,9 +24,13 @@ class MinimapSelectionView
     @removeDecorations()
 
     for selection in @minimap.getTextEditor().getSelections()
-      unless selection.isEmpty()
+      if not selection.isEmpty()
         decoration = @minimap.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
         @decorations.push decoration if decoration?
+      else if atom.config.get('minimap-selection.highlightCursorsLines')
+        decoration = @minimap.decorateMarker(selection.marker, type: 'line', scope: '.minimap .minimap-selection .cursor-line')
+        @decorations.push decoration if decoration?
+
 
   removeDecorations: ->
     return if @decorations.length is 0

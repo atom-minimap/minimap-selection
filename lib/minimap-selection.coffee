@@ -5,6 +5,12 @@ module.exports =
   active: false
   views: {}
 
+  config:
+    highlightCursorsLines:
+      type: 'boolean'
+      default: false
+      description: 'When true, the lines with cursors are highlighted in the minimap.'
+
   activate: ->
 
   consumeMinimapServiceV1: (@minimap) ->
