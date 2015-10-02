@@ -23,7 +23,10 @@ class MinimapSelectionView
   handleSelection: =>
     @removeDecorations()
 
-    for selection in @minimap.getTextEditor().getSelections()
+    textEditor = @minimap.getTextEditor()
+    return if !textEditor.selections? or textEditor.selections.length is 0
+
+    for selection in textEditor.getSelections()
       if not selection.isEmpty()
         decoration = @minimap.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
         @decorations.push decoration if decoration?
