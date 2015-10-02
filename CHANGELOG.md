@@ -1,3 +1,10 @@
+<a name="v4.3.1"></a>
+# v4.3.1 (2015-10-02)
+
+## :bug: Bug Fixes
+
+- Fix potential infinite loop when an editor has no selection ([410e46f0](https://github.com/atom-minimap/minimap-selection/commit/410e46f019909397abf594bcebb3b27c12d6643f), [#6](https://githu
+
 <a name="v4.3.0"></a>
 # v4.3.0 (2015-06-29)
 
