@@ -28,10 +28,10 @@ class MinimapSelectionView
 
     for selection in textEditor.getSelections()
       if not selection.isEmpty()
-        decoration = @minimap.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region')
+        decoration = @minimap.decorateMarker(selection.marker, type: 'highlight-under', scope: '.minimap .minimap-selection .region', plugin: 'selection')
         @decorations.push decoration if decoration?
       else if atom.config.get('minimap-selection.highlightCursorsLines')
-        decoration = @minimap.decorateMarker(selection.marker, type: 'line', scope: '.minimap .minimap-selection .cursor-line')
+        decoration = @minimap.decorateMarker(selection.marker, type: 'line', scope: '.minimap .minimap-selection .cursor-line', plugin: 'selection')
         @decorations.push decoration if decoration?
 
 
