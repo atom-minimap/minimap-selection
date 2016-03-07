@@ -1,3 +1,10 @@
+<a name="v4.4.0"></a>
+# v4.4.0 (2016-03-07)
+
+## :sparkles: Features
+
+- Add plugin origin to created decorations ([645f4130](https://github.com/atom-minimap/minimap-selection/commit/645f41309abf975345cff20e3d4c9e7212e783af))
+
 <a name="v4.3.1"></a>
 # v4.3.1 (2015-10-02)
 
