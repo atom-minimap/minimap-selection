@@ -10,6 +10,10 @@ module.exports =
       type: 'boolean'
       default: false
       description: 'When true, the lines with cursors are highlighted in the minimap.'
+    outlineSelection:
+      type: 'boolean'
+      default: false
+      description: 'When true, the selections will also be rendered with outline decorations.'
 
   activate: ->
 
