@@ -20,10 +20,18 @@ The selection color can be customized using the following CSS rule in your user 
 }
 ```
 
-When the `Highlight Cursors Lines` setting is enabled the line's highlight color can be customized using the following CSS rule in your user stylesheet: 
+When the `Highlight Cursors Lines` setting is enabled the line's highlight color can be customized using the following CSS rule in your user stylesheet:
 
 ```css
 .minimap-selection .cursor-line {
   background: blue;
+}
+```
+
+When the `Outline Selection` setting is enabled, the outline color can be customized using the following CSS rule:
+
+```css
+.minimap-selection .region-outline {
+  background: green;
 }
 ```

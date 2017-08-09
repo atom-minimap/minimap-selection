@@ -1,3 +1,10 @@
+<a name="v4.5.0"></a>
+# v4.5.0 (2017-08-09)
+
+## :sparkles: Features
+
+- Add a new setting to allow to render an outline around selections ([070f633b](https://github.com/atom-minimap/minimap-selection/commit/070f633b52b2b4f8518d5108baca05aa0e4a0859))
+
 <a name="v4.4.0"></a>
 # v4.4.0 (2016-03-07)
 
