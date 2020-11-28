@@ -1,3 +1,11 @@
+## [4.5.1](https://github.com/atom-minimap/minimap-selection/compare/v4.5.0...v4.5.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* add minimap as dependency ([efa92c2](https://github.com/atom-minimap/minimap-selection/commit/efa92c235479a1c5e5e57dfb363e41465d2c100c))
+* decaffeinate ([8d74802](https://github.com/atom-minimap/minimap-selection/commit/8d7480246f3f037af47d8da2ed75809bb1384a8b))
+
 <a name="v4.5.0"></a>
 # v4.5.0 (2017-08-09)
 

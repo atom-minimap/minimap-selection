@@ -1,7 +1,7 @@
 {
   "name": "minimap-selection",
   "main": "./lib/minimap-selection",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "description": "Display the buffer's selections on the minimap",
   "repository": "https://github.com/atom-minimap/minimap-selection",
   "license": "MIT",
