@@ -1,4 +1,6 @@
-# minimap-selection package [![Build Status](https://travis-ci.org/atom-minimap/minimap-selection.svg?branch=v4.1.0)](https://travis-ci.org/atom-minimap/minimap-selection)
+# minimap-selection package
+
+[![Build Status](https://github.com/atom-minimap/minimap-selection/workflows/CI/badge.svg)](https://github.com/atom-minimap/minimap-selection/actions)
 
 Display the buffer's selections on the minimap
 
