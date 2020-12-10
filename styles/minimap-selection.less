@@ -4,14 +4,19 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
+@contain_all: layout size paint style;
+
 .minimap-selection .region {
+  contain: @contain_all;
   background: @background-color-selected;
 }
 
 .minimap-selection .region-outline {
+  contain: @contain_all;
   background: @text-color;
 }
 
 .minimap-selection .cursor-line {
+  contain: @contain_all;
   background: @background-color-selected;
 }
