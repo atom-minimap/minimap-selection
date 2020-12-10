@@ -1,3 +1,10 @@
+## [4.5.2](https://github.com/atom-minimap/minimap-selection/compare/v4.5.1...v4.5.2) (2020-12-10)
+
+
+### Bug Fixes
+
+* Optimizations ([#11](https://github.com/atom-minimap/minimap-selection/issues/11)) ([5378952](https://github.com/atom-minimap/minimap-selection/commit/5378952dc3bb1bf6a7c1d15e47f00f114f607223))
+
 ## [4.5.1](https://github.com/atom-minimap/minimap-selection/compare/v4.5.0...v4.5.1) (2020-11-28)
 
 
