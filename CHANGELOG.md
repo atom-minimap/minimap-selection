@@ -1,3 +1,10 @@
+## [4.5.4](https://github.com/atom-minimap/minimap-selection/compare/v4.5.3...v4.5.4) (2021-01-19)
+
+
+### Bug Fixes
+
+* **deps:** bump atom-package-deps from 7.0.3 to 7.1.0 ([#20](https://github.com/atom-minimap/minimap-selection/issues/20)) ([6bcc76c](https://github.com/atom-minimap/minimap-selection/commit/6bcc76cd00d7228d93866b9f1d7ecfcff1a23743))
+
 ## [4.5.3](https://github.com/atom-minimap/minimap-selection/compare/v4.5.2...v4.5.3) (2020-12-14)
 
 
